@@ -1,0 +1,44 @@
+logo='''
+
+  ______                             
+ / _____)                            
+| /      ____  ____  ___  ____  ____ 
+| |     / _  |/ _  )/___)/ _  |/ ___)
+| \____( ( | ( (/ /|___ ( ( | | |    
+ \______\_||_|\____(___/ \_||_|_|    
+        (_)     | |                  
+    ____ _ ____ | | _   ____  ____   
+   / ___| |  _ \| || \ / _  )/ ___)  
+  ( (___| | | | | | | ( (/ /| |      
+   \____|_| ||_/|_| |_|\____|_|      
+          |_|                        
+
+'''
+def caeser(star_txt,shiftA,direc):
+    endtxt=""
+    if dir == 'decode':
+        shiftA *= -1
+    for i in star_txt:
+        if i in list:
+            pos=list.index(i)
+            np=pos+shiftA
+            nl=list[np]
+            endtxt+=nl
+        else:
+            endtxt+=i
+    print(f'The {direc}d text is {endtxt}')
+print(logo)
+what=True
+while(what):
+    dir=input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    txt=input("Type your message:\n").lower()
+    shift=int(input("Type the shift number:\n"))
+    shift=shift%26
+    list='a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
+    caeser(txt,shift,dir)
+    ck=input("Type 'yes' if you want to go again, Otherwise type 'no'.\n")
+    if ck=='yes':
+        what=True
+    else:
+        what=False
+        print('Goodbye')
